@@ -1,24 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import BusinessCard from "./views/business-card";
+// import LikeButton from "./views/like-button";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BusinessCard
+        data={{
+          name: "南天",
+          intro: "三好青年",
+          avatar:
+            "https://images.dog.ceo/breeds/poodle-standard/n02113799_6715.jpg",
+          mobile: "18211067697",
+          post: "前端开发工程师",
+          company: "北京南天信息工程有限公司",
+        }}
+        style={{ margin: "20px" }}
+      ></BusinessCard>
+      {/* <LikeButton></LikeButton> */}
     </div>
   );
 }

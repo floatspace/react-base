@@ -1,0 +1,28 @@
+.business-card {
+  position: relative;
+  width: 260px;
+  height: 400px;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  .avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-top: 40px;
+  }
+  .footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 16px;
+    background-color: #f6f6f6;
+    .mobile {
+      color: #8966ff;
+      font-size: 18px;
+      margin: 0;
+    }
+  }
+}
