@@ -1,17 +1,18 @@
 import React, { useState } from "react";
-import CommentList, { CommentProps,  CommentListProps } from "./CommentList";
+import CommentList, { CommentProps, CommentListProps } from "./CommentList";
 import CommentBox from "./CommentBox";
+import "./style.scss";
 
 const Comments = () => {
   const [commentsList, setComments] = useState([]);
   const handleSubmit = (data: CommentProps) => {
     console.log(data);
-    setComments((prev: any) =>{
-      return prev.concat([data])
-    })
+    setComments((prev: any) => {
+      return prev.concat([data]);
+    });
   };
   return (
-    <div>
+    <div className="comment-wrapper">
       <CommentList data={commentsList}></CommentList>
       <CommentBox
         onSubmit={(data) => {

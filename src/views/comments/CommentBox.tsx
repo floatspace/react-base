@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from "react";
+import React, { useState, ChangeEvent, KeyboardEvent } from "react";
 import { CommentProps } from "./CommentList";
 
 interface CommentBoxProps {
@@ -12,6 +12,9 @@ const CommentBox: React.FC<CommentBoxProps> = (props) => {
   const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
   };
+  const handleChange = (e: any) => {
+    setContent(e.target.value);
+  };
   const handleClick = () => {
     const res = {
       id: new Date().getTime(),
@@ -19,6 +22,14 @@ const CommentBox: React.FC<CommentBoxProps> = (props) => {
       content,
     };
     onSubmit && onSubmit(res);
+    setName("");
+    setContent("");
+  };
+  const handleKeyDown = (e: KeyboardEvent) => {
+    console.log(e.key);
+    if (e.key === "Enter" && content.length) {
+      handleClick();
+    }
   };
   return (
     <div>
@@ -31,7 +42,14 @@ const CommentBox: React.FC<CommentBoxProps> = (props) => {
         />
       </p>
       <p>
-        <textarea></textarea>
+        <textarea
+          rows={5}
+          cols={50}
+          value={content}
+          onChange={handleChange}
+          onKeyDown={handleKeyDown}
+          placeholder="评论内容"
+        ></textarea>
       </p>
       <button onClick={handleClick}>提交</button>
     </div>

@@ -13,13 +13,14 @@ export interface CommentListProps {
 const CommentList: React.FC<CommentListProps> = (props) => {
   const { data } = props;
   return (
-    <ul>
+    <ul className="comment-list">
+      {data.length > 0 && <h3>{data.length}条评论</h3>}
       {data.length
         ? data.map((comment) => {
             return (
-              <li key={comment.id}>
-                <p>{comment.name}</p>
-                <p>{comment.content}</p>
+              <li key={comment.id} className="comment-item">
+                <p className="avatar">{comment.name}</p>
+                <p className="content">{comment.content}</p>
               </li>
             );
           })

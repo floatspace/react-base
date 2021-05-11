@@ -2,6 +2,8 @@ import React, { createContext } from "react";
 import BusinessCard from "./views/business-card";
 import Header from "./views/header";
 import Comments from "./views/comments";
+// import Clock from "./views/clock/indexClass.js";
+import Clock from "./views/clock";
 // import LikeButton from "./views/like-button";
 
 interface ThemeProps {
@@ -34,7 +36,7 @@ function App() {
           <BusinessCard
             data={{
               name: "南天",
-              intro: "三好青年",
+              intro: "...",
               avatar:
                 "https://images.dog.ceo/breeds/poodle-standard/n02113799_6715.jpg",
               mobile: "18211067697",
@@ -44,7 +46,8 @@ function App() {
             style={{ margin: "20px" }}
           ></BusinessCard>
           {/* <LikeButton></LikeButton> */}
-          <Comments></Comments>
+          <Comments />
+          <Clock />
         </div>
       </ThemeContext.Provider>
     </div>
